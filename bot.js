@@ -139,7 +139,7 @@ bot.on('text', async (ctx) => {
             caption: specificText1,
             reply_to_message_id: ctx.message.message_id,
         });
-    } else if (message.includes('где') && message.includes('?') && Math.random() <= 0.08 && media.length > 0) {
+    } else if (message.includes('где?') && Math.random() <= 0.5 && media.length > 0) {
         //Ответ с фотографией бцшки2
         await ctx.replyWithPhoto(specificImagePath2, {
             caption: specificText2,
