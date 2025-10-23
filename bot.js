@@ -120,20 +120,20 @@ bot.on('text', async (ctx) => {
         await ctx.replyWithAnimation(randomGif, {
             reply_to_message_id: ctx.message.message_id,
         });
-    } else if (Math.random() <= 0.05 && media.length > 0) {
+    } else if (Math.random() <= 0.08 && media.length > 0) {
         // Ответ стандартным способом (случайная фраза)
         const randomResponse = responses[Math.floor(Math.random() * responses.length)];
         await ctx.reply(randomResponse, {
             reply_to_message_id: ctx.message.message_id,
         });
-    } else if (message.endsWith('?') && Math.random() <= 0.06 && media.length > 0) {
+    } else if (message.endsWith('?') && Math.random() <= 0.09 && media.length > 0) {
         //Ответ с фотографией бцшки
         await ctx.replyWithPhoto(specificImagePath, {
             caption: specificText,
             reply_to_message_id: ctx.message.message_id,
         });
         
-    } else if (message.endsWith('?') && Math.random() <= 0.07 && media.length > 0) {
+    } else if (message.endsWith('?') && Math.random() <= 0.1 && media.length > 0) {
         //Ответ с фотографией бцшки1
         await ctx.replyWithPhoto(specificImagePath1, {
             caption: specificText1,
