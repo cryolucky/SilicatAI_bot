@@ -1,6 +1,6 @@
 const { Telegraf, Markup } = require('telegraf');
 
- const bot = new Telegraf('7113840333:AAH1gaXeclEqLzOXCSspHIIuKkjbKq9TIiY');
+ const bot = new Telegraf('8360542399:AAHzngxlsQ9_h6FDW_dfSf-aEbPesofAZQs');
 
  const media = [
 'https://radikal.cloud/i/photo-2025-10-14-20-59-48.caL2pD',
