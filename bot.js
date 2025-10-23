@@ -3,30 +3,7 @@ const { Telegraf, Markup } = require('telegraf');
  const bot = new Telegraf('8360542399:AAHzngxlsQ9_h6FDW_dfSf-aEbPesofAZQs');
 
  const media = [
-    'https://i.pinimg.com/236x/70/f8/4a/70f84aa0d2964c11d0323a274e2b8214.jpg',
-'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVSZFTuNqHFxISuoCZjuZt8ZedMDJtfICr9w&s',
-'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNk5LOlH0LUy6Qa6bIAl8eblZtKSwDo04fSg&s',
-'https://i.pinimg.com/236x/e7/f5/c3/e7f5c34b00e31c13f8e119e065c951b5.jpg',
-'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRldZlaPeqlwsVRaeRo4qf1M7eW21JiTPoZTQ&s',
-'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKDVY7MTR1ib_5amPAy27k2bweRnEvYGo5XQ&s',
-'https://i.pinimg.com/736x/74/6f/7e/746f7ea72a59fb9382acc995ce130485.jpg',
-'https://sticker-tvk.ru/image/cache/data/%D0%B2%D1%8B%D1%80%D0%B5%D0%B7%D0%B0%D0%BD%D0%BD%D1%8B%D0%B5/%D0%BD%D0%B0%D0%B4%D0%BF%D0%B8%D1%81%D0%B8%20%D1%81%D1%80./1%20%D1%8F%D0%B5%D0%B1%D0%BB%D0%B0%D0%BD%2C%20%D1%87%D0%B5%D1%80%D0%BD%D1%8B%D0%B9-400x400.jpg',
-'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSA3mt1DD45dIjVauUg7fm2oSm2Nkw6c8d53A&s',
-'https://sun9-18.userapi.com/impg/b1lKCVN3EAStuR4v5K_aCsTUNhME5PWEBn7VUg/eiY2M8kHKC0.jpg?size=604x405&quality=95&sign=d619f6bdd4398eccb5eac281c9abf239&type=album',
-'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSURPiC4CbCndhMHsX-GXsACs45uZz3270dsA&s',
-'https://img2.joyreactor.cc/pics/post/%D0%BF%D1%80%D0%B8%D0%BA%D0%BE%D0%BB%D1%8B-%D0%B4%D0%BB%D1%8F-%D0%BF%D0%BE%D0%BB%D0%BD%D1%8B%D1%85-%D0%B4%D0%B5%D0%B3%D0%B5%D0%BD%D0%B5%D1%80%D0%B0%D1%82%D0%BE%D0%B2-%D1%82%D1%8B-%D0%BF%D0%B8%D0%B4%D0%BE%D1%80-8307520.jpeg',
-'https://img2.joyreactor.cc/pics/comment/%D0%B4%D0%B8%D0%B0%D0%B3%D1%80%D0%B0%D0%BC%D0%B0-%D0%B0%D0%BB%D1%84%D0%B0%D0%B2%D0%B8%D1%82-wikipedia-4084163.jpeg',
-'https://www.youtube.com/watch?v=kvBCZ1eJVx4',
-'https://www.meme-arsenal.com/memes/ef695c1e8da6ba499d09d144d235964f.jpg',
-'https://risovach.com/memimages/2024/11/26/6c8fa01edf9beaf293412ab1f3e809ea.jpg',
-'https://sun9-10.userapi.com/impg/KiXiI6vlkCgSL7GwtR0SB1Lpyw-mkLpv0RxJZg/y7id-qP9LfE.jpg?size=563x467&quality=95&sign=60df242a81315a56862878fee27c63cc&type=album',
-'https://www.meme-arsenal.com/memes/2fd8ac2fb8701cf5fc5607557446ca52.jpg',
-'https://www.meme-arsenal.com/memes/79fdd096248a71baebbfd615bff845bc.jpg',
-'https://risovach.ru/thumb/upload/200s/2020/04/mem/tupoy-pidor-zaebal_237013637_orig_.png?57uri',
-'https://img-webcalypt.ru/storage/memes/1839/202411/v1mauLSPQmIKCB1pc8Q0HVDB8579ztmKfvreuNSgMjtKHcGxwNVbFI3ODJfarjTCt0XRNOHQXOy4KucoXqSDy2grBuDUCvUATTCVwdn6WK2WkoTHbAQ1L0kylCguk1RL-md.jpeg',
-'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGRu9L86KplCk--fFLDYixunkrBTVmBD7d1g&s',
-'https://funny.klev.club/uploads/posts/2024-03/funny-klev-club-p-smeshnie-kartinki-kazashka-21.jpg',
-'https://img2.joyreactor.cc/pics/comment/full/%D0%BF%D1%80%D0%B8%D0%BA%D0%BE%D0%BB%D1%8B-%D0%B4%D0%BB%D1%8F-%D0%BF%D0%BE%D0%BB%D0%BD%D1%8B%D1%85-%D0%B4%D0%B5%D0%B3%D0%B5%D0%BD%D0%B5%D1%80%D0%B0%D1%82%D0%BE%D0%B2-%D1%82%D1%8B-%D0%BF%D0%B8%D0%B4%D0%BE%D1%80-5146771.jpeg',
+'https://radikal.cloud/i/photo-2025-10-14-20-59-48.caL2pD',
 'https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExMWZxY3MzcmcwcWFvcnNuaHI2NnB0YmNnZGMxNXpmdzI4OTY3cnV6cyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/JYdR60AJfdKLdLd3Ck/giphy.gif',
 'https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExNTllaXZlMW1nbHc0cWgxcG8zODd1NWtjbXJ3Ym15NzcxcmdmemV0MSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/0vtUh9xw87NZavDlLd/giphy.gif',
 ]; // Массив с оскорблениями
@@ -114,11 +91,15 @@ const responses = [
 
 const specificText = 'Вот выделил чёрной стрелкой';
 
+const specificImagePath = 'https://radikal.cloud/i/photo-2025-06-28-17-02-43.c0sgHT';
+
 const specificText1 = 'Выделил красной стрелкой. Надо впаять отсутствующие конденсаторы, тогда турбобуст перейдет с дефолтного режима совместимости в обычный, как на плейстейшон файв';
 
 const specificImagePath1 = 'https://radikal.cloud/i/photo-2025-05-31-03-25-16.c03Z6B';
 
-const specificImagePath = 'https://radikal.cloud/i/photo-2025-06-28-17-02-43.c0sgHT';
+const specificText2 = 'Вон там брат';
+
+const specificImagePath2 = 'https://radikal.cloud/i/photo-2025-09-06-12-22-40.caLgMC';
 
 bot.on('text', async (ctx) => {
 
@@ -145,8 +126,14 @@ bot.on('text', async (ctx) => {
         
     } else if (message.endsWith('?') && Math.random() <= 0.07 && media.length > 0) {
         //Ответ с фотографией бцшки1
-        await ctx.replyWithPhoto(specificImagePath, {
-            caption: specificText,
+        await ctx.replyWithPhoto(specificImagePath1, {
+            caption: specificText1,
+            reply_to_message_id: ctx.message.message_id,
+        });
+    } else if (message.endsWith('где?') && Math.random() <= 1 && media.length > 0) {
+        //Ответ с фотографией бцшки2
+        await ctx.replyWithPhoto(specificImagePath2, {
+            caption: specificText2,
             reply_to_message_id: ctx.message.message_id,
         });
     }
