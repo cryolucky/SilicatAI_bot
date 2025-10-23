@@ -7,7 +7,7 @@ const { Telegraf, Markup } = require('telegraf');
 ]; // Массив с оскорблениями
 
 const gif = [
-    'https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExMWZxY3MzcmcwcWFvcnNuaHI2NnB0YmNnZGMxNXpmdzI4OTY3cnV6cyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/JYdR60AJfdKLdLd3Ck/giphy.gif',
+'https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExMWZxY3MzcmcwcWFvcnNuaHI2NnB0YmNnZGMxNXpmdzI4OTY3cnV6cyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/JYdR60AJfdKLdLd3Ck/giphy.gif',
 'https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExNTllaXZlMW1nbHc0cWgxcG8zODd1NWtjbXJ3Ym15NzcxcmdmemV0MSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/0vtUh9xw87NZavDlLd/giphy.gif',
 ]
 
@@ -107,19 +107,20 @@ bot.on('text', async (ctx) => {
 
     const message = ctx.message.text;
     
-    if (message.endsWith('?') && Math.random() <= 0.05 && media.length > 0) {
-        // Случайно отправляем изображение, если условие выполнено
-        const randomPhoto = media[Math.floor(Math.random() * media.length)];
-        await ctx.replyWithPhoto(randomPhoto, {
-            reply_to_message_id: ctx.message.message_id,
-        });
-    } else if (Math.random() <= 0.04 && media.length > 0) {
+    // if (Math.random() <= 0.05 && media.length > 0) {
+    //     // Случайно отправляем изображение, если условие выполнено
+    //     const randomPhoto = media[Math.floor(Math.random() * media.length)];
+    //     await ctx.replyWithPhoto(randomPhoto, {
+    //         reply_to_message_id: ctx.message.message_id,
+    //     });
+    // } else 
+        if (Math.random() <= 0.07 && media.length > 0) {
         // Ответ анимацией
         const randomGif = gif[Math.floor(Math.random() * gif.length)];
         await ctx.replyWithAnimation(randomGif, {
             reply_to_message_id: ctx.message.message_id,
         });
-    } else if (Math.random() <= 0.06 && media.length > 0) {
+    } else if (Math.random() <= 0.07 && media.length > 0) {
         // Ответ стандартным способом (случайная фраза)
         const randomResponse = responses[Math.floor(Math.random() * responses.length)];
         await ctx.reply(randomResponse, {
