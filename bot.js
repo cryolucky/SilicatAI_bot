@@ -114,19 +114,19 @@ bot.on('text', async (ctx) => {
     //         reply_to_message_id: ctx.message.message_id,
     //     });
     // } else 
-        if (Math.random() <= 0.07 && media.length > 0) {
+        if (Math.random() <= 0.04 && media.length > 0) {
         // Ответ анимацией
         const randomGif = gif[Math.floor(Math.random() * gif.length)];
         await ctx.replyWithAnimation(randomGif, {
             reply_to_message_id: ctx.message.message_id,
         });
-    } else if (Math.random() <= 0.07 && media.length > 0) {
+    } else if (Math.random() <= 0.05 && media.length > 0) {
         // Ответ стандартным способом (случайная фраза)
         const randomResponse = responses[Math.floor(Math.random() * responses.length)];
         await ctx.reply(randomResponse, {
             reply_to_message_id: ctx.message.message_id,
         });
-    } else if (message.endsWith('?') && Math.random() <= 0.07 && media.length > 0) {
+    } else if (message.endsWith('?') && Math.random() <= 0.06 && media.length > 0) {
         //Ответ с фотографией бцшки
         await ctx.replyWithPhoto(specificImagePath, {
             caption: specificText,
@@ -139,7 +139,7 @@ bot.on('text', async (ctx) => {
             caption: specificText1,
             reply_to_message_id: ctx.message.message_id,
         });
-    } else if (message.includes('где') && message.includes('?') && Math.random() <= 0.07 && media.length > 0) {
+    } else if (message.includes('где') && message.includes('?') && Math.random() <= 0.08 && media.length > 0) {
         //Ответ с фотографией бцшки2
         await ctx.replyWithPhoto(specificImagePath2, {
             caption: specificText2,
