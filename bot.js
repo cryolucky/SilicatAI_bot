@@ -114,7 +114,7 @@ bot.on('text', async (ctx) => {
     //         reply_to_message_id: ctx.message.message_id,
     //     });
     // } else 
-        if (Math.random() <= 0.04 && media.length > 0) {
+        if (Math.random() <= 0.01 && media.length > 0) {
         // Ответ анимацией
         const randomGif = gif[Math.floor(Math.random() * gif.length)];
         await ctx.replyWithAnimation(randomGif, {
