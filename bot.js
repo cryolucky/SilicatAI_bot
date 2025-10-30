@@ -1,18 +1,25 @@
-const { Telegraf, Markup } = require('telegraf');
+const { Telegraf } = require('telegraf');
+const {
+  sendGif,
+  sendRandomResponse,
+  sendPhoto1,
+  sendPhoto2,
+  sendPhoto3
+} = require('./responses');
 
- const bot = new Telegraf('8360542399:AAHzngxlsQ9_h6FDW_dfSf-aEbPesofAZQs');
+const bot = new Telegraf('ТВОЙ_ТОКЕН_СЮДА');
 
- const media = [
-'https://radikal.cloud/i/photo-2025-10-14-20-59-48.caL2pD',
-]; // Массив с оскорблениями
+// Медиа и тексты
+const media = ['https://radikal.cloud/i/photo-2025-10-14-20-59-48.caL2pD'];
 
 const gif = [
-'https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExMWZxY3MzcmcwcWFvcnNuaHI2NnB0YmNnZGMxNXpmdzI4OTY3cnV6cyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/JYdR60AJfdKLdLd3Ck/giphy.gif',
-'https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExNTllaXZlMW1nbHc0cWgxcG8zODd1NWtjbXJ3Ym15NzcxcmdmemV0MSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/0vtUh9xw87NZavDlLd/giphy.gif',
-]
+  'https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExMWZxY3MzcmcwcWFvcnNuaHI2NnB0YmNnZGMxNXpmdzI4OTY3cnV6cyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/JYdR60AJfdKLdLd3Ck/giphy.gif',
+  'https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExNTllaXZlMW1nbHc0cWgxcG8zODd1NWtjbXJ3Ym15NzcxcmdmemV0MSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/0vtUh9xw87NZavDlLd/giphy.gif',
+];
 
 const responses = [
-    'Хмм... Интересно!',
+    //Массив фраз
+   'Хмм... Интересно!',
     'А почему бы и нет?',
     'Окей, продолжаем дальше.',
     'Что-то пошло не так?',
@@ -88,75 +95,48 @@ const responses = [
     'Здравствуйте когда дрова для макос выйдут',
     'Нее сорри я только irm https://get.activated.win | iex использую',
     'ЗАВТРА',
-    // Добавлена сюда
+
 ];
 
-const specificText = 'Вот выделил чёрной стрелкой';
+const specific = [
+  {
+    path: 'https://radikal.cloud/i/photo-2025-06-28-17-02-43.c0sgHT',
+    text: 'Вот выделил чёрной стрелкой',
+  },
+  {
+    path: 'https://radikal.cloud/i/photo-2025-05-31-03-25-16.c03Z6B',
+    text: 'Выделил красной стрелкой...',
+  },
+  {
+    path: 'https://radikal.cloud/i/photo-2025-09-06-12-22-40.caLgMC',
+    text: 'Вон там брат',
+  },
+];
 
-const specificImagePath = 'https://radikal.cloud/i/photo-2025-06-28-17-02-43.c0sgHT';
-
-const specificText1 = 'Выделил красной стрелкой. Надо впаять отсутствующие конденсаторы, тогда турбобуст перейдет с дефолтного режима совместимости в обычный, как на плейстейшон файв';
-
-const specificImagePath1 = 'https://radikal.cloud/i/photo-2025-05-31-03-25-16.c03Z6B';
-
-const specificText2 = 'Вон там брат';
-
-const specificImagePath2 = 'https://radikal.cloud/i/photo-2025-09-06-12-22-40.caLgMC';
-
+// --- Логика ответов --- //
 bot.on('text', async (ctx) => {
+  const message = ctx.message.text;
 
-    const message = ctx.message.text;
-    
-    // if (Math.random() <= 0.05 && media.length > 0) {
-    //     // Случайно отправляем изображение, если условие выполнено
-    //     const randomPhoto = media[Math.floor(Math.random() * media.length)];
-    //     await ctx.replyWithPhoto(randomPhoto, {
-    //         reply_to_message_id: ctx.message.message_id,
-    //     });
-    // } else 
-        if (Math.random() <= 0.01 && media.length > 0) {
-        // Ответ анимацией
-        const randomGif = gif[Math.floor(Math.random() * gif.length)];
-        await ctx.replyWithAnimation(randomGif, {
-            reply_to_message_id: ctx.message.message_id,
-        });
-    } else if (Math.random() <= 0.08 && media.length > 0) {
-        // Ответ стандартным способом (случайная фраза)
-        const randomResponse = responses[Math.floor(Math.random() * responses.length)];
-        await ctx.reply(randomResponse, {
-            reply_to_message_id: ctx.message.message_id,
-        });
-    } else if (message.endsWith('?') && Math.random() <= 0.09 && media.length > 0) {
-        //Ответ с фотографией бцшки
-        await ctx.replyWithPhoto(specificImagePath, {
-            caption: specificText,
-            reply_to_message_id: ctx.message.message_id,
-        });
-        
-    } else if (message.endsWith('?') && Math.random() <= 0.1 && media.length > 0) {
-        //Ответ с фотографией бцшки1
-        await ctx.replyWithPhoto(specificImagePath1, {
-            caption: specificText1,
-            reply_to_message_id: ctx.message.message_id,
-        });
-    } else if (message.includes('где') && message.includes('?') && Math.random() <= 0.8 && media.length > 0) {
-        //Ответ с фотографией бцшки2
-        await ctx.replyWithPhoto(specificImagePath2, {
-            caption: specificText2,
-            reply_to_message_id: ctx.message.message_id,
-        });
+  try {
+    if (Math.random() <= 0.01 && gif.length > 0) {
+      await sendGif(ctx, gif);
+    } else if (Math.random() <= 0.08 && responses.length > 0) {
+      await sendRandomResponse(ctx, responses);
+    } else if (message.endsWith('?') && Math.random() <= 0.09) {
+      await sendPhoto1(ctx, specific[0].path, specific[0].text);
+    } else if (message.endsWith('?') && Math.random() <= 0.1) {
+      await sendPhoto2(ctx, specific[1].path, specific[1].text);
+    } else if (message.includes('где') && message.includes('?') && Math.random() <= 0.8) {
+      await sendPhoto3(ctx, specific[2].path, specific[2].text);
     }
-    
+  } catch (err) {
+    console.error('Ошибка в обработке:', err);
+  }
 
-
-console.log('Полученное сообщение:', ctx.message);
-
+  console.log('Полученное сообщение:', ctx.message);
 });
-
-
 
 bot.launch();
 console.log('Started');
-
 process.once('SIGINT', () => bot.stop('SIGINT'));
 process.once('SIGTERM', () => bot.stop('SIGTERM'));
