@@ -5,9 +5,9 @@ const {
   sendPhoto1,
   sendPhoto2,
   sendPhoto3
-} = require('./responses');
+} = require('./lib');
 
-const bot = new Telegraf('ТВОЙ_ТОКЕН_СЮДА');
+const bot = new Telegraf('8360542399:AAHzngxlsQ9_h6FDW_dfSf-aEbPesofAZQs');
 
 // Медиа и тексты
 const media = ['https://radikal.cloud/i/photo-2025-10-14-20-59-48.caL2pD'];
@@ -120,13 +120,13 @@ bot.on('text', async (ctx) => {
   try {
     if (Math.random() <= 0.01 && gif.length > 0) {
       await sendGif(ctx, gif);
-    } else if (Math.random() <= 0.08 && responses.length > 0) {
+    } else if (Math.random() <= 0.01 && responses.length > 0) {
       await sendRandomResponse(ctx, responses);
-    } else if (message.endsWith('?') && Math.random() <= 0.09) {
+    } else if (message.endsWith('?') && Math.random() <= 0.01) {
       await sendPhoto1(ctx, specific[0].path, specific[0].text);
-    } else if (message.endsWith('?') && Math.random() <= 0.1) {
+    } else if (message.endsWith('?') && Math.random() <= 0.01) {
       await sendPhoto2(ctx, specific[1].path, specific[1].text);
-    } else if (message.includes('где') && message.includes('?') && Math.random() <= 0.8) {
+    } else if (message.includes('где') && message.includes('?') && Math.random() <= 0.01) {
       await sendPhoto3(ctx, specific[2].path, specific[2].text);
     }
   } catch (err) {
